@@ -1,26 +1,4 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from open_ai_integration import generate_story
-
-app = FastAPI()
-
-# Add CORS settings
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Allow origin from localhost:3000
-    allow_credentials=True,
-    allow_methods=["*"],  # Allow all methods
-    allow_headers=["*"],  # Allow all headers
-)
-
-@app.get("/")
-def read_root():
-    return {"message": "Hello, API is working!"}
-
-
-@app.post("/test-data")
-def read_test_data():
-    return {
+init_json_structure = {
     "main_data": {
         "weather": [
             {
@@ -631,11 +609,3 @@ def read_test_data():
         }
     },
 }
-
-
-#user_prompt = f"Here's the current game state: {json_data}. The player chosed step: {chosen_step}. Generate the next part of the story, possible next steps, and provide provide output in valid updated JSON data accordingly."
-
-
-@app.post("/generate-story")
-def generate(data: dict):
-    return generate_story(data)

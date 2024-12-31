@@ -1,26 +1,4 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from open_ai_integration import generate_story
-
-app = FastAPI()
-
-# Add CORS settings
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Allow origin from localhost:3000
-    allow_credentials=True,
-    allow_methods=["*"],  # Allow all methods
-    allow_headers=["*"],  # Allow all headers
-)
-
-@app.get("/")
-def read_root():
-    return {"message": "Hello, API is working!"}
-
-
-@app.post("/test-data")
-def read_test_data():
-    return {
+user_data_json = {
     "main_data": {
         "weather": [
             {
@@ -452,7 +430,7 @@ def read_test_data():
             }
         ],
     },
-    "generator_response_data": {
+    "prev_generator_response_data": {
         "prompt": "Arwen has the new items and skills that he found due his long trip, new character and relationships. As Arwen steps deeper into the Mystic Forest, dark clouds gather overhead, signaling a sudden change in weather. He hears a distant cry for help and notices an ominous cave nearby. The choices he makes now will shape the journey ahead.",
         "steps": [
             {
@@ -630,12 +608,15 @@ def read_test_data():
             }
         }
     },
+    "user_data": {
+            "custom_prompt": "",
+            "choosed_step": [
+                {
+                    "id": 1,
+                    "description": "Arwen rushes toward the source of the cry for help.",
+                    "risk_level": "high",
+                    "time_estimate": "30 minutes"
+                },
+            ],
+    }
 }
-
-
-#user_prompt = f"Here's the current game state: {json_data}. The player chosed step: {chosen_step}. Generate the next part of the story, possible next steps, and provide provide output in valid updated JSON data accordingly."
-
-
-@app.post("/generate-story")
-def generate(data: dict):
-    return generate_story(data)
