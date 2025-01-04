@@ -1,9 +1,14 @@
-FROM node:18
+# Use a base image with Node.js >=20.0.0
+FROM node:20 AS build
 
+# Set working directory
 WORKDIR /app
 
-COPY package.json package-lock.json ./
-RUN npm install
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Upgrade npm (optional but recommended)
+RUN npm install -g npm@latest
 
 COPY . .
 
