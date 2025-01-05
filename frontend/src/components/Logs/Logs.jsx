@@ -1,4 +1,5 @@
 import React from "react";
+import "./Logs.css";
 
 const Logs = ({ logs }) => {
   if (!logs?.length) return null;

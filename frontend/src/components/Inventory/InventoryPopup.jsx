@@ -5,16 +5,16 @@ const InventoryPopup = ({ inventory, owner }) => {
   const [expandedItem, setExpandedItem] = useState(null);
 
   if (!inventory || inventory.length === 0) {
-    return (    
-        <div className="inventory">
-            <h3 className="inventory-title">👜 {owner} Inventory</h3>
-            <div className="inventory-grid">
-                <div className="inventory-card empty-card">
-                    <p>No items in inventory</p>
-                </div>
-                </div>
+    return (
+      <div className="inventory">
+        <h3 className="inventory-title">👜 {owner} Inventory</h3>
+        <div className="inventory-grid">
+          <div className="inventory-card empty-card">
+            <p>No items in inventory</p>
+          </div>
         </div>
-      )
+      </div>
+    )
   }
 
   return (
@@ -24,9 +24,8 @@ const InventoryPopup = ({ inventory, owner }) => {
         {inventory.map((item, index) => (
           <div
             key={index}
-            className={`inventory-card rarity-${item.rarity.toLowerCase()} ${
-              item.is_equipped === "true" ? "equipped-card" : ""
-            }`}
+            className={`inventory-card rarity-${item.rarity.toLowerCase()} ${item.is_equipped === "true" ? "equipped-card" : ""
+              }`}
           >
             <div className="card-header">
               {/* Item Type Emoji */}

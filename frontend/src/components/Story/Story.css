@@ -1,87 +1,89 @@
 /* Story Container */
 .story-container {
-    background: linear-gradient(to bottom, #fefcf8, #f9f6f0);
-    border: 2px solid #d4c0a1;
-    border-radius: 12px;
-    padding: 25px;
-    margin: 20px 0;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    position: relative;
-    max-width: 100%;
-    box-sizing: border-box;
-    font-family: "Merriweather", serif; /* Fantasy-style font */
-  }
-  
-  /* Story Title */
-  .story-title {
-    font-size: 2rem;
-    color: #6b4f1d;
-    margin: 0 0 15px;
-    text-align: center;
-    font-family: "Cinzel", serif; /* Decorative serif font */
-  }
-  
-  .story-title::after {
-    content: "";
-    display: block;
-    width: 40%;
-    height: 3px;
-    background: linear-gradient(to right, #d4c0a1, transparent);
-    margin: 10px auto 0;
-    border-radius: 3px;
-  }
-  
-  /* Story Text */
-  .story-text {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #3e3d3a;
-    text-align: justify;
-    position: relative;
-  }
-  
-  /* Drop Cap */
-  .story-text::first-letter {
-    font-size: 3.5rem;
-    font-family: "Cinzel", serif;
-    font-weight: bold;
-    color: #6b4f1d;
-    float: left;
-    margin-right: 10px;
-    line-height: 1;
-  }
-  
-  /* Fade-in Animation */
-  .fade-in {
+  background: linear-gradient(to bottom, #fefcf8, #f9f6f0);
+  border: 2px solid #d4c0a1;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 20px 0;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  max-width: 100%;
+  box-sizing: border-box;
+  /* Fantasy-style font */
+  font-family: "Merriweather", serif;
+}
+
+/* Story Title */
+.story-title {
+  font-size: 2rem;
+  color: #6b4f1d;
+  margin: 0 0 15px;
+  text-align: center;
+  /* Decorative serif font */
+  font-family: "Cinzel", serif;
+}
+
+.story-title::after {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 3px;
+  background: linear-gradient(to right, #d4c0a1, transparent);
+  margin: 10px auto 0;
+  border-radius: 3px;
+}
+
+/* Story Text */
+.story-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #3e3d3a;
+  text-align: justify;
+  position: relative;
+}
+
+/* Drop Cap */
+.story-text::first-letter {
+  font-size: 3.5rem;
+  font-family: "Cinzel", serif;
+  font-weight: bold;
+  color: #6b4f1d;
+  float: left;
+  margin-right: 10px;
+  line-height: 1;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
     opacity: 0;
-    animation: fadeIn 0.5s ease-in-out forwards;
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+
+  to {
+    opacity: 1;
   }
-  
-  /* Media Queries */
-  @media (max-width: 768px) {
-    .story-container {
-      padding: 15px;
-    }
-  
-    .story-title {
-      font-size: 1.6rem;
-    }
-  
-    .story-text {
-      font-size: 1rem;
-    }
-  
-    .story-text::first-letter {
-      font-size: 2.5rem;
-    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .story-container {
+    padding: 15px;
   }
-  
+
+  .story-title {
+    font-size: 1.6rem;
+  }
+
+  .story-text {
+    font-size: 1rem;
+  }
+
+  .story-text::first-letter {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,35 @@
+.header {
+    display: grid;
+    margin-top: 15px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin: 10px 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    font-size: 16px;
+    font-family: var(--font-family);
+    color: #333;
+    padding: 15px;
+    margin: 0;
+}
+
+.init-game-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.init-game-button:hover {
+    background-color: #45a049;
+}

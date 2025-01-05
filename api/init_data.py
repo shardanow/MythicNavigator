@@ -111,10 +111,25 @@ init_json_structure = {
                 "added_at": "123-12-28T09:40:00"
             }
         ],
+        "class": [
+            {
+                "id": 1,
+                "name": "Warrior",
+                "description": "A skilled fighter with mastery over weapons and combat techniques.",
+                "added_at": "123-12-28T09:45:00"
+            },
+            {
+                "id": 2,
+                "name": "Mage",
+                "description": "A wielder of powerful magic and arcane knowledge.",
+                "added_at": "123-12-28T09:45:00"
+            }
+        ],
         "characters": [
             {
                 "id": 1,
                 "name": "Arwen",
+                "class_id": 1,
                 "race_id": 1,
                 "gender": "male",
                 "age": 120,
@@ -137,8 +152,9 @@ init_json_structure = {
             {
                 "id": 2,
                 "name": "Dan",
-                "gender": "male",
+                "class_id": 2,
                 "race_id": 2,
+                "gender": "male",
                 "age": 25,
                 "level": 1,
                 "language_id": 1,
@@ -432,6 +448,12 @@ init_json_structure = {
     },
     "generator_response_data": {
         "prompt": "Arwen has the new items and skills that he found due his long trip, new character and relationships. As Arwen steps deeper into the Mystic Forest, dark clouds gather overhead, signaling a sudden change in weather. He hears a distant cry for help and notices an ominous cave nearby. The choices he makes now will shape the journey ahead.",
+        "environment": {
+            "place": "Forest",
+            "weather": "Rain",
+            "daytime": "Afternoon",
+            "mood": "Mysterious"
+        },
         "steps": [
             {
                 "id": 1,

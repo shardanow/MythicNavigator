@@ -1,4 +1,5 @@
 import React from "react";
+import "./Header.css";
 
 const Header = ({ inputData, setInputData, onInit }) => {
   return (
@@ -8,7 +9,7 @@ const Header = ({ inputData, setInputData, onInit }) => {
         onChange={(e) => setInputData(e.target.value)}
         placeholder="Enter the custom prompt here..."
       />
-      <button onClick={onInit}>Init</button>
+      <button className="init-game-button" onClick={onInit}>Init</button>
     </div>
   );
 };

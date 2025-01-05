@@ -53,18 +53,24 @@
 
 /* Risk Levels */
 .risk-high {
-    border-left: 8px solid #ff6b6b; /* Red for High Risk */
-    box-shadow: 0 0 4px rgba(255, 107, 107, 0.6); /* Subtle glow */
+    border-left: 8px solid #ff6b6b;
+    /* Red for High Risk */
+    box-shadow: 0 0 4px rgba(255, 107, 107, 0.6);
+    /* Subtle glow */
 }
 
 .risk-medium {
-    border-left: 8px solid #ffe66d; /* Yellow for Medium Risk */
-    box-shadow: 0 0 4px rgba(255, 230, 109, 0.6); /* Subtle glow */
+    border-left: 8px solid #ffe66d;
+    /* Yellow for Medium Risk */
+    box-shadow: 0 0 4px rgba(255, 230, 109, 0.6);
+    /* Subtle glow */
 }
 
 .risk-low {
-    border-left: 8px solid #76c7c0; /* Green for Low Risk */
-    box-shadow: 0 0 4px rgba(118, 199, 192, 0.6); /* Subtle glow */
+    border-left: 8px solid #76c7c0;
+    /* Green for Low Risk */
+    box-shadow: 0 0 4px rgba(118, 199, 192, 0.6);
+    /* Subtle glow */
 }
 
 /* Description and Meta Info */
@@ -99,7 +105,8 @@
     height: 3px;
     width: 0;
     background: linear-gradient(to right, #8b755e, #d4c0a1);
-    transition: width 0.5s ease; /* Slower animation */
+    transition: width 0.5s ease;
+    /* Slower animation */
     z-index: 0;
 }
 

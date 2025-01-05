@@ -54,9 +54,8 @@ const Characters = ({ characters }) => {
                   <span>{stat.label}:</span>
                   <div className="progress-bar">
                     <div
-                      className={`progress-bar-fill ${stat.className} ${
-                        stat.value / stat.max < 0.2 && stat.label === "❤️ Health" ? "progress-bar-critical" : ""
-                      }`}
+                      className={`progress-bar-fill ${stat.className} ${stat.value / stat.max < 0.2 && stat.label === "❤️ Health" ? "progress-bar-critical" : ""
+                        }`}
                       style={{ width: `${(stat.value / stat.max) * 100}%` }}
                     ></div>
                   </div>

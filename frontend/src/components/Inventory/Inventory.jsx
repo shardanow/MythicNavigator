@@ -5,7 +5,7 @@ const Inventory = ({ inventory }) => {
   const [expandedItem, setExpandedItem] = useState(null);
 
   if (!Object.keys(inventory).length) {
-    return 
+    return
   }
 
   return (
@@ -21,9 +21,8 @@ const Inventory = ({ inventory }) => {
             {inventory[character].map((item, index) => (
               <div
                 key={index}
-                className={`inventory-card rarity-${item.rarity.toLowerCase()} ${
-                  item.is_equipped === "true" ? "equipped-card" : ""
-                }`}
+                className={`inventory-card rarity-${item.rarity.toLowerCase()} ${item.is_equipped === "true" ? "equipped-card" : ""
+                  }`}
               >
                 <div className="card-header">
                   {/* Item Type Emoji */}

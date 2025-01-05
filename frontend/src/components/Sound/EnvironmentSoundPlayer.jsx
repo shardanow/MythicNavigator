@@ -78,7 +78,7 @@ const EnvironmentSoundPlayer = ({ url, play }) => {
         <div id="youtube-player"></div>
         <div className="volume-control">
           <label>
-            Volume: 
+            Volume:
             <input
               type="range"
               min="0"
