@@ -8,6 +8,32 @@ import StepButtons from "../components/Steps/StepButtons";
 import Loader from "../components/Shared/Loader";
 import ErrorMessage from "../components/Shared/ErrorMessage";
 
+import EnvironmentSoundPlayer from "../components/Sound/EnvironmentSoundPlayer";
+import soundMap from "../components/Sound/SoundList";
+
+function findMatchingSound(soundMap, environment) {
+    const { place, weather, daytime, mood } = environment;
+
+    console.log("Environment:", place, weather, daytime, mood);
+
+    const searchTerms = [place.toLowerCase(), weather.toLowerCase(), daytime.toLowerCase(), mood.toLowerCase()];
+
+    // Score matches based on the number of matching terms
+    const scoredMatches = Object.keys(soundMap)
+        .map(key => {
+            const keyLower = key.toLowerCase();
+            const score = searchTerms.reduce((count, term) => (keyLower.includes(term) ? count + 1 : count), 0);
+            return { key, score };
+        })
+        .filter(match => match.score > 0) // Keep only matches with at least one matching term
+        .sort((a, b) => b.score - a.score); // Sort by score in descending order
+
+    console.log("Scored Matches:", scoredMatches);
+
+    // Return the highest-scoring match or null if no matches are found
+    return scoredMatches.length > 0 ? soundMap[scoredMatches[0].key] : soundMap[0];
+}
+
 function Home() {
     let init_json_structure = {
         "main_data": {
@@ -122,10 +148,25 @@ function Home() {
                     "added_at": "123-12-28T09:40:00"
                 }
             ],
+            "class": [
+                {
+                    "id": 1,
+                    "name": "Warrior",
+                    "description": "A skilled fighter with mastery over weapons and combat techniques.",
+                    "added_at": "123-12-28T09:45:00"
+                },
+                {
+                    "id": 2,
+                    "name": "Mage",
+                    "description": "A wielder of powerful magic and arcane knowledge.",
+                    "added_at": "123-12-28T09:45:00"
+                }
+            ],
             "characters": [
                 {
                     "id": 1,
                     "name": "Arwen",
+                    "class_id": 1,
                     "race_id": 1,
                     "gender": "male",
                     "age": 120,
@@ -148,8 +189,9 @@ function Home() {
                 {
                     "id": 2,
                     "name": "Dan",
-                    "gender": "male",
+                    "class_id": 2,
                     "race_id": 2,
+                    "gender": "male",
                     "age": 25,
                     "level": 1,
                     "language_id": 1,
@@ -443,6 +485,12 @@ function Home() {
         },
         "generator_response_data": {
             "prompt": "Arwen has the new items and skills that he found due his long trip, new character and relationships. As Arwen steps deeper into the Mystic Forest, dark clouds gather overhead, signaling a sudden change in weather. He hears a distant cry for help and notices an ominous cave nearby. The choices he makes now will shape the journey ahead.",
+            "environment": {
+                "place": "Forest",
+                "weather": "Rainy",
+                "daytime": "Afternoon",
+                "mood": "Mysterious"
+            },
             "steps": [
                 {
                     "id": 1,
@@ -639,8 +687,17 @@ function Home() {
   const [error, setError] = useState(null);
   const [inputData, setInputData] = useState("");
 
+  const [currentSettingPlayer, setCurrentSettingPlayer] = useState("");
+  const [playStatus, setPlayStatus] = useState("stop");
+
   const handleFetchData = async (dataToSend = {}) => {
     setLoading(true);
+
+    // Set the default sound to play
+    const defaultSoundUrl = findMatchingSound(soundMap, { place: "default", weather: "default", daytime: "default", mood: "default" });
+    setCurrentSettingPlayer(defaultSoundUrl);
+    setPlayStatus("play");
+
     setError(null);
     try {
       const result = await fetchData(dataToSend);
@@ -703,10 +760,10 @@ function Home() {
         const characterLanguage = result.main_data.language.find((i) => i.id === character.language_id);
         // get character race
         const characterRace = result.main_data.race.find((i) => i.id === character.race_id);
+        // get character class
+        const characterClass = result.main_data.class.find((i) => i.id === character.class_id);
         // get character skills
         const characterSkills = result.main_data.character_skills_list_rel.filter((i) => i.character_id === character.id);
-        // get character skills type includes
-       // const characterSkillsType = characterSkills.map((i) => result.main_data.skills.find((s) => s.id === i.skill_id).skill_type_id);
         // get character skills data
         const characterSkillsData = characterSkills.map((i) => result.main_data.skills.find((s) => s.id === i.skill_id));
         // get character status
@@ -735,6 +792,7 @@ function Home() {
             status: characterStatusData?.name || "Unknown",
             status_reason: characterStatus?.reason || "Unknown",
             inventory: characterInventory,
+            class: characterClass?.name || "Unknown",
         };
 
         return acc;
@@ -839,8 +897,17 @@ function Home() {
 
         //set events data
         setEvents({ ...newEvents });
-        
 
+     
+        //set sounds for the current environment
+          const soundUrl = findMatchingSound(soundMap, result.generator_response_data.environment);
+          if (soundUrl) {
+              setCurrentSettingPlayer(soundUrl);
+              setPlayStatus("play");
+          } else {
+              console.warn("No matching sound found for the current environment.");
+              setPlayStatus("stop");
+          }
 
     } catch (err) {
       setError(err);
@@ -877,6 +944,21 @@ function Home() {
     console.log("Updated inventory:", inventory);
   }, [inventory]);
 
+  // Play the sound for the updated environment
+  useEffect(() => {
+    if (recievedData?.generator_response_data?.environment) {
+        const soundUrl = findMatchingSound(soundMap, recievedData.generator_response_data.environment);
+        if (soundUrl) {
+            console.log("Setting sound for updated environment:", soundUrl);
+            setCurrentSettingPlayer(soundUrl);
+            setPlayStatus("play");
+        } else {
+            console.warn("No matching sound found for the updated environment.");
+            setPlayStatus("stop");
+        }
+    }
+}, [recievedData]);
+
   return (
     <div className="container">
       <Header inputData={inputData} setInputData={setInputData} onInit={() => handleFetchData()} />
@@ -892,6 +974,8 @@ function Home() {
       />
 
       <Characters characters={characters} />
+
+      {playStatus === "play" && <EnvironmentSoundPlayer url={currentSettingPlayer} play={playStatus}/>}
 
       <Logs logs={recievedData?.logs} />
     </div>
