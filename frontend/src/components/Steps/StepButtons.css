@@ -1,11 +1,14 @@
 /* StepButtons Container */
 .step-buttons {
-    background: linear-gradient(to bottom, #fefcf8, #f4f4f4);
+    background: linear-gradient(to bottom right, #fefcf8, #f4f0e5);
     border: 2px solid #d4c0a1;
     border-radius: 12px;
     padding: 25px;
     margin: 20px 0;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /* Title */
@@ -15,7 +18,7 @@
     text-align: center;
     margin: 0;
     position: relative;
-    font-family: "Cinzel", serif;
+    font-family: "Cinzel Decorative", serif;
 }
 
 .steps-title::after {
@@ -49,6 +52,7 @@
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: "Merriweather", serif;
 }
 
 /* Risk Levels */

@@ -1,11 +1,11 @@
 /* Story Container */
 .story-container {
-  background: linear-gradient(to bottom, #fefcf8, #f9f6f0);
+  background: linear-gradient(to bottom right, #fefcf8, #f4f0e5);
   border: 2px solid #d4c0a1;
   border-radius: 12px;
   padding: 25px;
   margin: 20px 0;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.05);
   position: relative;
   max-width: 100%;
   box-sizing: border-box;
@@ -20,17 +20,17 @@
   margin: 0 0 15px;
   text-align: center;
   /* Decorative serif font */
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel Decorative", serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .story-title::after {
-  content: "";
+  content: "⚜️";
   display: block;
-  width: 40%;
-  height: 3px;
-  background: linear-gradient(to right, #d4c0a1, transparent);
+  font-size: 1.2rem;
+  color: #6b4f1d;
   margin: 10px auto 0;
-  border-radius: 3px;
+  text-align: center;
 }
 
 /* Story Text */
@@ -40,17 +40,39 @@
   color: #3e3d3a;
   text-align: justify;
   position: relative;
+  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.05);
+  align-items: flex-start;
 }
 
-/* Drop Cap */
-.story-text::first-letter {
-  font-size: 3.5rem;
-  font-family: "Cinzel", serif;
+/* Drop Cap Styling */
+.drop-cap {
+  font-size: 5rem;
+  font-family: "Cinzel Decorative", serif;
   font-weight: bold;
   color: #6b4f1d;
   float: left;
-  margin-right: 10px;
+  margin-right: 15px;
   line-height: 1;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(145deg, #f9f6f0, #e5dbc7);
+  background-blend-mode: multiply;
+  background-size: cover;
+  padding: 5px 10px;
+  border: 2px solid #d4c0a1;
+  border-radius: 5px;
+}
+
+/* Decorative Borders */
+.story-container::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px dashed #d4c0a1;
+  border-radius: 12px;
+  pointer-events: none;
 }
 
 /* Fade-in Animation */
@@ -84,6 +106,6 @@
   }
 
   .story-text::first-letter {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 }

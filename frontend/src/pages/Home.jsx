@@ -5,6 +5,8 @@ import Story from "../components/Story/Story";
 import Logs from "../components/Logs/Logs";
 import Characters from "../components/Characters/Characters";
 import StepButtons from "../components/Steps/StepButtons";
+import World from "../components/World/World";
+
 import Loader from "../components/Shared/Loader";
 import ErrorMessage from "../components/Shared/ErrorMessage";
 
@@ -60,6 +62,9 @@ function Home() {
             "current_world_status": {
                 "id": 1,
                 "weather_id": 2,
+                "gorunds_id": 2,
+                "location_id": 2,
+                "event_id": 2,
                 "started_at": "123-12-27T09:00:00",
                 "game_date": "123-12-28T13:30:00"
             },
@@ -79,8 +84,8 @@ function Home() {
                 },
                 {
                     "id": 2,
-                    "name": "Goblin Cave",
-                    "description": "A dark, foreboding cave where goblins reside.",
+                    "name": "Goblin Lands",
+                    "description": "A treacherous land inhabited by goblins and other dangerous creatures.",
                     "added_at": "123-12-28T12:45:00"
                 }
             ],
@@ -442,22 +447,26 @@ function Home() {
                 {
                     "id": 1,
                     "quest_giver_id": 1,
+                    "location_id": 1,
+                    "grounds_id": 1,
                     "name": "Find the Artifact",
                     "description": "Locate the lost artifact in the Mystic Forest.",
-                    "current_amount": 0,
+                    "current_amount": 1,
                     "target_amount": 1,
-                    "completion_percentage": 0,
-                    "is_active": "true",
-                    "started_at": "123-12-28T09:30:00",
-                    "ended_at": ""
+                    "completion_percentage": 100,
+                    "is_active": "false",
+                    "started_at": "123-12-28T07:30:00",
+                    "ended_at": "123-12-28T09:30:00"
                 },
                 {
                     "id": 2,
-                    "quest_giver_id": 3,
+                    "quest_giver_id": 1,
+                    "location_id": 2,
+                    "grounds_id": 2,
                     "name": "Research the Goblin Cave or leave",
                     "description": "Explore the depths of the Goblin Cave and uncover its secrets.",
                     "current_amount": 0,
-                    "target_amount": 10,
+                    "target_amount": 1,
                     "completion_percentage": 0,
                     "is_active": "true",
                     "started_at": "123-12-28T11:45:00",
@@ -473,21 +482,12 @@ function Home() {
                     "added_at": "123-12-28T09:30:00"
                 }
             ],
-            "journey": [
-                {
-                    "id": 1,
-                    "current_event_id": 1,
-                    "step_number": 1,
-                    "started_at": "123-12-28T09:30:00",
-                    "ended_at": ""
-                }
-            ],
         },
         "generator_response_data": {
             "prompt": "Arwen has the new items and skills that he found due his long trip, new character and relationships. As Arwen steps deeper into the Mystic Forest, dark clouds gather overhead, signaling a sudden change in weather. He hears a distant cry for help and notices an ominous cave nearby. The choices he makes now will shape the journey ahead.",
             "environment": {
                 "place": "Forest",
-                "weather": "Rainy",
+                "weather": "Rain",
                 "daytime": "Afternoon",
                 "mood": "Mysterious"
             },
@@ -674,7 +674,6 @@ function Home() {
     const [characters, setCharacters] = useState({});
     const [skills, setSkills] = useState({});
     const [party, setParty] = useState({});
-    const [journey, setJourney] = useState({});
     const [events, setEvents] = useState({});
     const [locations, setLocations] = useState({});
     const [grounds, setGrounds] = useState({});
@@ -810,6 +809,33 @@ function Home() {
             const newWorldStatus = result.main_data.current_world_status;
             // get current weather data
             const currentWeather = result.main_data.weather.find((i) => i.id === newWorldStatus.weather_id);
+            // get current grounds data
+            const currentGrounds = result.main_data.grounds.find((i) => i.id === newWorldStatus.gorunds_id);
+            // get current location data
+            const currentLocation = result.main_data.locations.find((i) => i.id === newWorldStatus.location_id);
+            // get current event data
+            const currentEvent = result.main_data.events.find((i) => i.id === newWorldStatus.event_id);
+
+            //get event data
+            const eventQuestGiver = result.main_data.characters.find((i) => i.id === currentEvent.quest_giver_id);
+            const eventReward = result.main_data.events_reward.find((i) => i.event_id === currentEvent.id);
+            const eventRewardItem = result.main_data.items.find((i) => i.id === eventReward?.item_id);
+            const eventLocation = result.main_data.locations.find((i) => i.id === currentEvent.location_id);
+            const eventGrounds = result.main_data.grounds.find((i) => i.id === currentEvent.grounds_id);
+
+            //add event data to the current event
+            currentEvent.quest_giver = eventQuestGiver;
+            currentEvent.location = eventLocation;
+            currentEvent.grounds = eventGrounds;
+            currentEvent.reward = {
+                ...eventReward,
+                item: eventRewardItem,
+            };
+
+            // add current grounds, location and event to the world status data
+            newWorldStatus.grounds = currentGrounds;
+            newWorldStatus.location = currentLocation;
+            newWorldStatus.event = currentEvent;
 
             // set world status data
             setWorldStatus({
@@ -819,9 +845,6 @@ function Home() {
 
             // set world history data
             setWorldHistory(result.main_data.current_world_history);
-
-            // set journey data
-            setJourney(result.main_data.journey);
 
             //set choosed steps data
             setWorldChooses(result.main_data.current_world_chooses);
@@ -891,9 +914,7 @@ function Home() {
                 };
 
                 return acc;
-            }
-
-                , {});
+            }, {});
 
             //set events data
             setEvents({ ...newEvents });
@@ -968,10 +989,14 @@ function Home() {
 
             <Story prompt={recievedData?.generator_response_data?.prompt} />
 
+
+
             <StepButtons
                 steps={recievedData?.generator_response_data?.steps || []}
                 onStepClick={handleStepClick}
             />
+
+            <World worldStatus={worldStatus} worldHistory={worldHistory} worldChooses={worldChooses} />
 
             <Characters characters={characters} />
 

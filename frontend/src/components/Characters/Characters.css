@@ -1,10 +1,15 @@
 /* Characters Container */
 .characters-container {
-  padding: 20px;
-  background-color: #f9f6f0;
+  background: linear-gradient(to bottom right, #fefcf8, #f4f0e5);
+  border: 2px solid #d4c0a1;
   border-radius: 12px;
+  padding: 25px;
   margin: 20px 0;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-family: "Roboto Slab", serif;
 }
 
 .characters-title {
@@ -13,7 +18,7 @@
   text-align: center;
   margin-bottom: 20px;
   margin-top: 0;
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel Decorative", serif;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -66,7 +71,7 @@
   align-items: center;
   font-size: 1.8rem;
   color: #fff;
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel Decorative", serif;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -238,7 +243,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel Decorative", serif;
   transition: background-color 0.3s;
 }
 

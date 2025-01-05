@@ -23,6 +23,9 @@ init_json_structure = {
         "current_world_status": {
             "id": 1,
             "weather_id": 2,
+            "gorunds_id": 2,
+            "location_id": 2,
+            "event_id": 2,
             "started_at": "123-12-27T09:00:00",
             "game_date": "123-12-28T13:30:00"
         },
@@ -42,8 +45,8 @@ init_json_structure = {
             },
             {
                 "id": 2,
-                "name": "Goblin Cave",
-                "description": "A dark, foreboding cave where goblins reside.",
+                "name": "Goblin Lands",
+                "description": "A treacherous land inhabited by goblins and other dangerous creatures.",
                 "added_at": "123-12-28T12:45:00"
             }
         ],
@@ -405,22 +408,26 @@ init_json_structure = {
             {
                 "id": 1,
                 "quest_giver_id": 1,
+                "location_id": 1,
+                "grounds_id": 1,
                 "name": "Find the Artifact",
                 "description": "Locate the lost artifact in the Mystic Forest.",
-                "current_amount": 0,
+                "current_amount": 1,
                 "target_amount": 1,
-                "completion_percentage": 0,
-                "is_active": "true",
-                "started_at": "123-12-28T09:30:00",
-                "ended_at": ""
+                "completion_percentage": 100,
+                "is_active": "false",
+                "started_at": "123-12-28T07:30:00",
+                "ended_at": "123-12-28T09:30:00"
             },
             {
                 "id": 2,
-                "quest_giver_id": 3,
+                "quest_giver_id": 1,
+                "location_id": 2,
+                "grounds_id": 2,
                 "name": "Research the Goblin Cave or leave",
                 "description": "Explore the depths of the Goblin Cave and uncover its secrets.",
                 "current_amount": 0,
-                "target_amount": 10,
+                "target_amount": 1,
                 "completion_percentage": 0,
                 "is_active": "true",
                 "started_at": "123-12-28T11:45:00",
@@ -434,15 +441,6 @@ init_json_structure = {
                 "item_id": 1,
                 "experience": 50,
                 "added_at": "123-12-28T09:30:00"
-            }
-        ],
-        "journey": [
-            {
-                "id": 1,
-                "current_event_id": 1,
-                "step_number": 1,
-                "started_at": "123-12-28T09:30:00",
-                "ended_at": ""
             }
         ],
     },

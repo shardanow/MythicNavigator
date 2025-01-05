@@ -22,8 +22,36 @@ body {
 
 .App {
   display: grid;
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
   color: #333;
   cursor: default;
   padding: 0 15px;
+}
+
+body {
+  background: 
+    radial-gradient(circle, rgba(245, 245, 245, 0.6) 0%, transparent 70%) center/200% 200%, /* Subtle radial highlight */
+    linear-gradient(45deg, rgba(250, 250, 250, 1), rgba(240, 240, 240, 1)), /* Base light grey */
+    linear-gradient(90deg, rgba(255, 255, 255, 0.6) 25%, rgba(240, 240, 240, 0.9) 75%), /* Horizontal streaks */
+    repeating-linear-gradient(0deg, rgba(230, 230, 230, 0.3), rgba(230, 230, 230, 0.3) 1px, transparent 2px); /* Fine grain lines */
+  background-blend-mode: multiply, multiply, overlay, normal; /* Layer blending */
+  background-size: 100%, 100%, 100%, 2px; /* Texture scaling */
+  background-color: #fafafa; /* Very light grey base */
+  height: 100%;
+  width: 100%;
+}
+
+/* Optional: Add Subtle Noise Effect */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0) 70%), /* Subtle dark spots */
+              linear-gradient(45deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.01)); /* Fine noise */
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.4;
 }

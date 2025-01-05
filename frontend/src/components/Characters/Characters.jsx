@@ -18,7 +18,7 @@ const Characters = ({ characters }) => {
 
   return (
     <div className="characters-container">
-      <h2 className="characters-title">🛡️ Characters</h2>
+      <h2 className="characters-title">🧙‍♂️ Characters</h2>
       <div className="character-cards">
         {Object.values(characters).map((char) => (
           <div key={char.id} className="character-card">

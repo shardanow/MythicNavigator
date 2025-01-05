@@ -26,11 +26,18 @@ const Story = ({ prompt }) => {
 
   if (!prompt) return null;
 
+  // Extract first letter and remaining text for custom rendering
+  const firstLetter = revealedText.charAt(0);
+  const remainingText = revealedText.slice(1);
+
   return (
     <div className="story-container">
-      <h2 className="story-title">📖 Story</h2>
+      <h2 className="story-title">📜 Story</h2>
       <p className={`story-text ${isAnimating ? "fade-in" : ""}`}>
-        {revealedText}
+        {firstLetter && (
+          <span className="drop-cap">{firstLetter}</span>
+        )}
+        {remainingText}
       </p>
     </div>
   );

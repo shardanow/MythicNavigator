@@ -71,7 +71,7 @@ const EnvironmentSoundPlayer = ({ url, play }) => {
 
   return (
     <>
-      <button className="toggle-button" onClick={toggleVisibility}>
+      <button className="sound-toggle-button" onClick={toggleVisibility}>
         {isVisible ? "🔊" : "🔊"}
       </button>
       <div className={`player-container ${isVisible ? "visible" : "hidden"}`}>

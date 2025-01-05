@@ -12,7 +12,7 @@
   color: #6b4f1d;
   text-align: center;
   margin-bottom: 5px;
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel Decorative", serif;
 }
 
 .inventory-title::after {
@@ -30,7 +30,7 @@
   font-size: 1.8rem;
   color: #6b4f1d;
   margin-bottom: 15px;
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel Decorative", serif;
 }
 
 /* Grid Layout */
@@ -101,11 +101,11 @@
 }
 
 .item-name {
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel Decorative", serif;
 }
 
 .item-description {
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel Decorative", serif;
   font-style: italic;
   font-size: 0.95rem;
   color: #555;
@@ -142,7 +142,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel Decorative", serif;
 }
 
 .stats-button:hover {
