@@ -1,5 +1,6 @@
 .world-container {
     display: flex;
+    position: relative;
     flex-direction: column;
     gap: 20px;
     padding: 20px;
@@ -154,7 +155,7 @@ ul {
     gap: 15px;
 }
 
-.toggle-button {
+.world-header .toggle-button {
     background: none;
     border: none;
     font-size: 1.5rem;
@@ -162,9 +163,11 @@ ul {
     cursor: pointer;
     outline: none;
     transition: transform 0.3s ease;
+    position: absolute;
+    right: 20px;
 }
 
-.toggle-button:hover {
+.world-header .toggle-button:hover {
     transform: scale(1.1);
 }
 

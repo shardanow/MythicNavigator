@@ -989,8 +989,6 @@ function Home() {
 
             <Story prompt={recievedData?.generator_response_data?.prompt} />
 
-
-
             <StepButtons
                 steps={recievedData?.generator_response_data?.steps || []}
                 onStepClick={handleStepClick}
