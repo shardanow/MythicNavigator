@@ -14,6 +14,23 @@
 }
 
 
+.world-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.world-content::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb, #ccc);
+    border-radius: 4px;
+}
+
+.world-content::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover, #bbb);
+}
+
+.world-content::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track, #f1f1f1);
+}
+
 /* World Title */
 .world-title {
     font-size: 2rem;
@@ -173,6 +190,12 @@ ul {
 
 .world-content {
     transition: max-height 0.3s ease, opacity 0.3s ease;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 700px;
+    overflow-y: auto;
 }
 
 .collapsed .world-content {

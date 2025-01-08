@@ -9,9 +9,9 @@
     max-width: 100%;
     box-sizing: border-box;
     font-family: "Roboto Slab", serif;
-  }
-  
-  .party-title {
+}
+
+.party-title {
     font-size: 2rem;
     color: #6b4f1d;
     text-align: center;
@@ -19,9 +19,9 @@
     margin-bottom: 0;
     padding-bottom: 0;
     font-family: "Cinzel Decorative", serif;
-  }
-  
-  .party-title::after {
+}
+
+.party-title::after {
     content: "";
     display: block;
     width: 100%;
@@ -29,7 +29,7 @@
     background: linear-gradient(to right, #d4c0a1, transparent);
     margin: 10px auto 0;
     border-radius: 3px;
-  }
+}
 
 /* Party Header */
 .party-header {
@@ -54,16 +54,6 @@
     color: var(--accent-color, #007bff);
 }
 
-/* Party Members */
-.party-members {
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-height: 400px;
-    overflow-y: auto;
-}
-
 .party-members::-webkit-scrollbar {
     width: 8px;
 }
@@ -81,16 +71,24 @@
     background-color: var(--scrollbar-track, #f1f1f1);
 }
 
-/* Individual Party Member */
-.party-member {
+/* Party Members */
+.party-members {
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    padding: 12px;
-    background-color: var(--member-background, #ffffff);
-    border: 1px solid var(--border-color, #ddd);
-    border-radius: 6px;
-    box-shadow: var(--box-shadow, 0 2px 4px rgba(0, 0, 0, 0.1));
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    gap: 16px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+/* Individual Party Member */
+.party-member {
+    background: linear-gradient(to bottom, #fff, #f9f6f0);
+    border: 2px solid #d4c0a1;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .party-member:hover {
@@ -161,9 +159,9 @@
     align-items: center;
     justify-content: center;
     gap: 15px;
-  }
-  
-  .party-header .toggle-button {
+}
+
+.party-header .toggle-button {
     background: none;
     border: none;
     font-size: 1.5rem;
@@ -173,8 +171,8 @@
     transition: transform 0.3s ease;
     position: absolute;
     right: 20px;
-  }
-  
-  .party-header .toggle-button:hover {
+}
+
+.party-header .toggle-button:hover {
     transform: scale(1.1);
-  }
+}

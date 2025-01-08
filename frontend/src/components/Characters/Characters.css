@@ -12,6 +12,24 @@
   font-family: "Roboto Slab", serif;
 }
 
+.character-cards::-webkit-scrollbar {
+  width: 8px;
+}
+
+.character-cards::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb, #ccc);
+  border-radius: 4px;
+}
+
+.character-cards::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover, #bbb);
+}
+
+.character-cards::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track, #f1f1f1);
+}
+
+
 .characters-title {
   font-size: 2rem;
   color: #6b4f1d;
@@ -36,6 +54,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  padding: 16px;
+  max-height: 600px;
+  overflow-y: auto;
 }
 
 .character-card {

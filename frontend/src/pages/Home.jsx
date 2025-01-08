@@ -911,7 +911,7 @@ function Home() {
                 const partyMemberData = result.main_data.characters.find((i) => i.id === partyMember.character_id);
 
                 //get patry member relationship data from newCharactersRelationships
-                const partyMemberRelationships = newCharactersRelationships[partyMemberData.name] || [];
+                const partyMemberRelationships = charactersRelationships[partyMemberData.name] || [];
 
                 //add party member relationships to the party member data
                 partyMemberData.relationships = partyMemberRelationships;
@@ -925,16 +925,10 @@ function Home() {
                 return acc;
             }, {});
 
-
-            console.log('Party: ', newParty);
-
             //set party members data
             setParty({ 
                 ...newParty, 
             });
-
-
-
 
             //set events data
             const newEvents = result.main_data.events.reduce((acc, event) => {
@@ -980,8 +974,10 @@ function Home() {
     };
 
     const handleStepClick = (step) => {
+        const { generator_response_data, logs, ...restData } = newData;
+    
         const updatedData = {
-            ...newData,
+            ...restData,
             user_data: {
                 ...newData.user_data,
                 choosed_step: [
@@ -993,12 +989,9 @@ function Home() {
                     },
                 ],
             },
-            prev_generator_response_data: newData.generator_response_data,
+            prev_generator_response_data: generator_response_data,
         };
-
-        delete updatedData.generator_response_data;
-        delete updatedData.logs;
-
+    
         setNewData(updatedData);
         handleFetchData(updatedData);
     };
