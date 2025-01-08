@@ -30,7 +30,7 @@ const InventoryPopup = ({ inventory, owner }) => {
             <div className="card-header">
               {/* Item Type Emoji */}
               <div className="item-icon" title={`Type: ${item.type}`}>
-                {getItemIcon(item.type)}
+              {item.type_emoji}
               </div>
               <h4 className="item-name">{item.name}</h4>
               {/* Equipped Status */}
@@ -38,12 +38,13 @@ const InventoryPopup = ({ inventory, owner }) => {
                 <span className="equipped-indicator" title="Equipped">🛡️</span>
               )}
               <span className={`rarity-badge rarity-${item.rarity.toLowerCase()}`}>
-                {getRarityLabel(item.rarity)}
+                {item.rarity_emoji+" "+item.rarity}
               </span>
             </div>
             <p className="item-description">{item.description}</p>
             <div className="card-footer">
               <span>Qty: {item.quantity || 1}</span>
+              <span>Status: {item.status}</span>
               <button
                 className="stats-button"
                 onClick={() =>
@@ -58,7 +59,7 @@ const InventoryPopup = ({ inventory, owner }) => {
                 <ul>
                   {item.item_stats.map((stat, i) => (
                     <li key={i}>
-                      <span>{stat.name}</span>
+                      <span>{stat.emoji} {stat.name}</span>
                       <span>{stat.value}</span>
                     </li>
                   ))}

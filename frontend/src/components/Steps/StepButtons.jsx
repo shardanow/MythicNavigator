@@ -6,7 +6,9 @@ const StepButtons = ({ steps, onStepClick }) => {
 
   return (
     <div className="step-buttons">
+      <div className="steps-header">
       <h2 className="steps-title">🗺️ Next Steps</h2>
+      </div>
       <div className="steps-container">
         {steps.map((step) => (
           <button

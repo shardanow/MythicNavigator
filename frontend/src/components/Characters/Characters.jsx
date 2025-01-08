@@ -28,7 +28,7 @@ const Characters = ({ characters }) => {
       {/* Toggle Button */}
       <div className="characters-header" onClick={toggleCollapse}>
         <h2 className="characters-title">🧙‍♂️ Characters</h2>
-        <button className="toggle-button">
+        <button className="toggle-button" title="Toggle">
           {isCollapsed ? "▶" : "▼"} {/* Toggle arrow */}
         </button>
       </div>
@@ -48,14 +48,14 @@ const Characters = ({ characters }) => {
               </div>
               <div className="character-info">
                 <div className="basic-info">
-                  <p><strong>Class:</strong> {char.class}</p>
+                  <p><strong>Class:</strong> {char.class_emoji} {char.class}</p>
                   <p><strong>Race:</strong> {char.race}</p>
                   <p><strong>Gender:</strong> {char.gender}</p>
                   <p><strong>Age:</strong> {char.age}</p>
-                  <p><strong>Language:</strong> {char.language}</p>
+                  <p><strong>Native Language:</strong> {char.language}</p>
                 </div>
                 <div className="additional-info">
-                  <p><strong>Status:</strong> {char.status}</p>
+                  <p><strong>Status:</strong> {char.status_emoji} {char.status}</p>
                   <p><strong>Reason:</strong> {char.status_reason}</p>
                 </div>
               </div>

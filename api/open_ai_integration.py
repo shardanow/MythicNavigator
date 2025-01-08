@@ -129,9 +129,10 @@ def generate_story(input_data):
         "2. Reflect the user's `choosed_step.description` in the new narrative.\n"
         "3. Ensure that only the selected `choosed_step` is resolved in the `outcome.description`.\n"
         "4. Include emotional responses, environmental details, and relationship dynamics in the narrative to deepen immersion.\n"
-        "5. Tailor the narrative to reflect the characters current health, stamina, mana, and relationships from `main_data`.\n"
-        "6. Keep the tone consistent with a medieval fantasy world, with natural transitions between resolved steps and new challenges.\n"
-        "7. Add hooks or unresolved elements (e.g., 'Arwen notices a strange emblem on the travelers robe') to enhance story depth while avoiding resolution of future steps.\n"
+        "5. Add emojis, sounds, or other sensory details to enhance the user's experience.\n"
+        "6. Tailor the narrative to reflect the characters current health, stamina, mana, and relationships from `main_data`.\n"
+        "7. Keep the tone consistent with a medieval fantasy world, with natural transitions between resolved steps and new challenges.\n"
+        "8. Add hooks or unresolved elements (e.g., 'Arwen notices a strange emblem on the travelers robe') to enhance story depth while avoiding resolution of future steps.\n"
 
         # "### Instructions for main_data Updates:\n"
         # "1. Merge 'outcome.new_*' entries into 'main_data'.\n"

@@ -22,9 +22,9 @@ const Skills = ({ skills, owner }) => {
         {skills.map((skill) => (
           <div key={skill.id} className="skill-card">
             <div className="skill-header">
-              <h5 className="skill-name">{skill.name}</h5>
-              {skill.is_attack === "true" && <span className="skill-type attack">⚔️ Attack - {skill.type}</span>}
-              {skill.is_attack === "false" && <span className="skill-type support">✨ Support - {skill.type}</span>}
+              <h5 className="skill-name">{skill.emoji} {skill.name}</h5>
+              {skill.is_attack === "true" && <span className="skill-type attack">⚔️ {skill.type}</span>}
+              {skill.is_attack === "false" && <span className="skill-type support">✨ {skill.type}</span>}
             </div>
             <p className="skill-description">{skill.description}</p>
             <div className="skill-costs">
@@ -49,7 +49,7 @@ const Skills = ({ skills, owner }) => {
                 <ul className="effects-list">
                   {skill.effects.map((effect) => (
                     <li key={effect.id} className="effect-item">
-                      <strong>{effect.name}:</strong> {effect.description}
+                      <strong>{effect.name}:</strong> {effect.emoji} {effect.description}
                     </li>
                   ))}
                 </ul>

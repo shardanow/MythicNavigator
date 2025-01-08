@@ -4,6 +4,7 @@ init_json_structure = {
             {
                 "id": 1,
                 "name": "Sunny",
+                "emoji": "☀️",
                 "description": "A bright and sunny day with clear skies.",
                 "min_temperature": 20,
                 "max_temperature": 30,
@@ -13,6 +14,7 @@ init_json_structure = {
             {
                 "id": 2,
                 "name": "Stormy",
+                "emoji": "⛈️",
                 "description": "A sudden storm with heavy rain and strong winds.",
                 "min_temperature": 15,
                 "max_temperature": 25,
@@ -118,12 +120,14 @@ init_json_structure = {
             {
                 "id": 1,
                 "name": "Warrior",
+                "emoji": "⚔️",
                 "description": "A skilled fighter with mastery over weapons and combat techniques.",
                 "added_at": "123-12-28T09:45:00"
             },
             {
                 "id": 2,
                 "name": "Mage",
+                "emoji": "🔮",
                 "description": "A wielder of powerful magic and arcane knowledge.",
                 "added_at": "123-12-28T09:45:00"
             }
@@ -160,7 +164,7 @@ init_json_structure = {
                 "gender": "male",
                 "age": 25,
                 "level": 1,
-                "language_id": 1,
+                "language_id": 2,
                 "current_experience": 0,
                 "next_level_experience": 100,
                 "current_health": 50,
@@ -186,6 +190,7 @@ init_json_structure = {
             {
                 "id": 1,
                 "name": "Power Strike",
+                "emoji": "⚔️",
                 "skill_type_id": 1,
                 "skill_level": 1,
                 "skill_mana_cost": 5,
@@ -198,6 +203,7 @@ init_json_structure = {
             {
                 "id": 2,
                 "name": "Thunder Strike",
+                "emoji": "⚡",
                 "skill_type_id": 1,
                 "skill_level": 1,
                 "skill_mana_cost": 10,
@@ -212,6 +218,7 @@ init_json_structure = {
             {
                 "id": 1,
                 "name": "Damage",
+                "emoji": "💥",
                 "description": "Inflicts damage to an enemy.",
                 "added_at": "123-12-28T09:30:00"
             }
@@ -240,11 +247,14 @@ init_json_structure = {
             {
                 "id": 1,
                 "name": "Friend",
+                "emoji": "👫",
+                "description": "A bond forged through trust and companionship.",
                 "added_at": "123-12-27T18:30:00"
             },
             {
                 "id": 2,
                 "name": "Protector",
+                "emoji": "🛡️",
                 "description": "A bond forged through mutual respect and courage.",
                 "added_at": "123-12-28T12:55:00"
             }
@@ -271,6 +281,7 @@ init_json_structure = {
             {
                 "id": 1,
                 "name": "Healthy",
+                "emoji": "🌟",
                 "added_at": "123-12-28T09:30:00"
             }
         ],
@@ -288,6 +299,8 @@ init_json_structure = {
             {
                 "id": 1,
                 "name": "Common",
+                "emoji": "⚪",
+                "color": "#FFFFFF",
                 "added_at": "123-12-28T09:30:00"
             }
         ],
@@ -295,18 +308,21 @@ init_json_structure = {
             {
                 "id": 1,
                 "name": "Weapon",
+                "emoji": "⚔️",
                 "added_at": "123-12-28T09:30:00"
             },
             {
                 "id": 2,
                 "name": "Accessory",
+                "emoji": "💍",
                 "added_at": "123-12-28T09:30:00"
             }
         ],
         "item_status": [
             {
                 "id": 1,
-                "name": "New",
+                "name": "Good",
+                "color": "#00FF00",
                 "added_at": "123-12-28T09:30:00"
             }
         ],
@@ -323,6 +339,7 @@ init_json_structure = {
                         {
                         "id": 1,
                         "name": "Damage",
+                        "emoji": "💥",
                         "value": 15,
                         "added_at": "123-12-28T09:30:00"
                         }
@@ -340,6 +357,7 @@ init_json_structure = {
                         {
                         "id": 1,
                         "name": "Damage",
+                        "emoji": "💥",
                         "value": 5,
                         "added_at": "123-12-28T11:15:00"
                         }
@@ -358,6 +376,7 @@ init_json_structure = {
                             "id": 2,
                             "item_id": 3,
                             "name": "Magic Power",
+                            "emoji": "🔮",
                             "value": 15,
                             "added_at": "123-12-28T12:45:00"
                         }
@@ -445,7 +464,7 @@ init_json_structure = {
         ],
     },
     "generator_response_data": {
-        "prompt": "Arwen has the new items and skills that he found due his long trip, new character and relationships. As Arwen steps deeper into the Mystic Forest, dark clouds gather overhead, signaling a sudden change in weather. He hears a distant cry for help and notices an ominous cave nearby. The choices he makes now will shape the journey ahead.",
+        "prompt": "Arwen has discovered new items 🛡️ and skills 🪄 during his long journey. Additionally, he has formed new relationships 🤝 and encountered a new character 🧙‍♂️. As Arwen steps deeper into the Mystic Forest 🌲, dark clouds gather overhead, signaling a sudden change in weather ⛈️. He hears a distant cry for help 📢 and notices an ominous cave 🕳️ nearby. ⚠️ The choices he makes now will shape the journey ahead 🔮.",
         "environment": {
             "place": "Forest",
             "weather": "Rain",
@@ -455,25 +474,25 @@ init_json_structure = {
         "steps": [
             {
                 "id": 1,
-                "description": "Arwen rushes toward the source of the cry for help.",
+                "description": "Arwen rushes toward the source of the cry for help ⚡.",
                 "risk_level": "high",
                 "time_estimate": "30 minutes"
             },
             {
                 "id": 2,
-                "description": "Arwen decides to investigate the cave entrance for potential danger.",
+                "description": "Arwen decides to investigate the cave entrance 🕳️ for potential danger.",
                 "risk_level": "medium",
                 "time_estimate": "20 minutes"
             },
             {
                 "id": 3,
-                "description": "Arwen seeks shelter from the approaching storm and evaluates his inventory.",
+                "description": "Arwen seeks shelter from the approaching storm ⛈️ and evaluates his inventory 🎒.",
                 "risk_level": "low",
                 "time_estimate": "15 minutes"
             },
             {
                 "id": 4,
-                "description": "Arwen uses his skills to prepare for the challenges ahead, training with his sword in the clearing.",
+                "description": "⚔️ Arwen uses his skills to prepare for the challenges ahead, training with his sword 🗡️ in the clearing.",
                 "risk_level": "low",
                 "time_estimate": "10 minutes"
             }
@@ -513,6 +532,7 @@ init_json_structure = {
             "new_weather": {
                 "id": 2,
                 "name": "Stormy",
+                "emoji": "⛈️",
                 "description": "A sudden storm with heavy rain and strong winds.",
                 "min_temperature": 15,
                 "max_temperature": 25,
@@ -543,6 +563,7 @@ init_json_structure = {
                 {
                     "id": 2,
                     "name": "Accessory",
+                    "emoji": "💍",
                     "added_at": "123-12-28T09:30:00"
                 }
             ],
@@ -550,6 +571,7 @@ init_json_structure = {
                 {
                     "id": 2,
                     "name": "Thunder Strike",
+                    "emoji": "⚡",
                     "skill_type_id": 1,
                     "skill_level": 1,
                     "skill_mana_cost": 10,
@@ -588,6 +610,7 @@ init_json_structure = {
                 {
                     "id": 2,
                     "name": "Protector",
+                    "emoji": "🛡️",
                     "description": "A bond forged through mutual respect and courage.",
                     "added_at": "123-12-28T12:55:00"
                 }

@@ -19,7 +19,7 @@ const World = ({ worldStatus, worldHistory, worldChooses }) => {
             {/* Toggle Button */}
             <div className="world-header" onClick={toggleCollapse}>
                 <h2 className="world-title">🌍 World Overview</h2>
-                <button className="toggle-button">
+                <button className="toggle-button"  title="Toggle">
                     {isCollapsed ? "▶" : "▼"} {/* Toggle arrow */}
                 </button>
             </div>
@@ -32,7 +32,7 @@ const World = ({ worldStatus, worldHistory, worldChooses }) => {
                         <p>📅 <strong>Date:</strong> {worldStatus.game_date}</p>
                         <p>🗺️ <strong>Grounds:</strong> {worldStatus.grounds.name} - {worldStatus.grounds.description}</p>
                         <p>📍 <strong>Location:</strong> {worldStatus.location.name} - {worldStatus.location.description}</p>
-                        <p>⛅ <strong>Weather:</strong> {worldStatus.weather?.name} - {worldStatus.weather?.description}</p>
+                        <p>⛅ <strong>Weather:</strong>  {worldStatus.weather?.emoji} {worldStatus.weather?.name} - {worldStatus.weather?.description}</p>
                         <p>🌡️ <strong>Temp Range:</strong> {worldStatus.weather?.min_temperature}°C - {worldStatus.weather?.max_temperature}°C</p>
                     </div>
 
