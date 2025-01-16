@@ -373,15 +373,15 @@ function Home() {
                     "item_rarity_id": 1,
                     "description": "A basic iron sword.",
                     "price": 10,
-                    "added_at": "123-12-28T09:30:00",             
+                    "added_at": "123-12-28T09:30:00",
                     "item_stats": [
-                            {
+                        {
                             "id": 1,
                             "name": "Damage",
                             "value": 15,
                             "added_at": "123-12-28T09:30:00"
-                            }
-                        ]
+                        }
+                    ]
                 },
                 {
                     "id": 2,
@@ -392,13 +392,13 @@ function Home() {
                     "price": 5,
                     "added_at": "123-12-28T11:15:00",
                     "item_stats": [
-                            {
+                        {
                             "id": 1,
                             "name": "Damage",
                             "value": 5,
                             "added_at": "123-12-28T11:15:00"
-                            }
-                        ]
+                        }
+                    ]
                 },
                 {
                     "id": 3,
@@ -409,14 +409,14 @@ function Home() {
                     "price": 100,
                     "added_at": "123-12-28T12:45:00",
                     "item_stats": [
-                            {
-                                "id": 2,
-                                "item_id": 3,
-                                "name": "Magic Power",
-                                "value": 15,
-                                "added_at": "123-12-28T12:45:00"
-                            }
-                        ]
+                        {
+                            "id": 2,
+                            "item_id": 3,
+                            "name": "Magic Power",
+                            "value": 15,
+                            "added_at": "123-12-28T12:45:00"
+                        }
+                    ]
                 }
             ],
             "inventory": [
@@ -893,7 +893,10 @@ function Home() {
 
                 acc[characterData.name].push({
                     ...relationshipData,
-                    target_character: targetCharacterData,
+                    target_character:{
+                        id: targetCharacterData.id, // Include only the ID to avoid circular reference
+                        name: targetCharacterData.name, // Add other essential fields if needed
+                    },
                 });
 
                 return acc;
@@ -910,8 +913,8 @@ function Home() {
                 //get party member character data
                 const partyMemberData = result.main_data.characters.find((i) => i.id === partyMember.character_id);
 
-                //get patry member relationship data from newCharactersRelationships
-                const partyMemberRelationships = charactersRelationships[partyMemberData.name] || [];
+                //get patry member relationship data from charactersRelationships
+                const partyMemberRelationships = newCharactersRelationships[partyMemberData.name] || [];
 
                 //add party member relationships to the party member data
                 partyMemberData.relationships = partyMemberRelationships;
@@ -926,8 +929,8 @@ function Home() {
             }, {});
 
             //set party members data
-            setParty({ 
-                ...newParty, 
+            setParty({
+                ...newParty,
             });
 
             //set events data
@@ -975,7 +978,7 @@ function Home() {
 
     const handleStepClick = (step) => {
         const { generator_response_data, logs, ...restData } = newData;
-    
+
         const updatedData = {
             ...restData,
             user_data: {
@@ -991,7 +994,7 @@ function Home() {
             },
             prev_generator_response_data: generator_response_data,
         };
-    
+
         setNewData(updatedData);
         handleFetchData(updatedData);
     };

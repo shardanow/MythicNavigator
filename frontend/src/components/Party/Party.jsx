@@ -34,9 +34,9 @@ const Party = ({ partyMembers }) => {
                             </div>
                             <div className="member-info">
                                 <div className="basic-info">
-                                    <p><strong>Joined:</strong> {member.joined_at}</p>
-                                    <p><strong>Relations:</strong> {member.relationships.map((relation) => (
-                                        <span key={relation.id}> {relation.name} {relation.emoji} for <b>{relation.target_character.name}</b> - {relation.description}</span>
+                                    <p className="join-date"><strong>Joined:</strong> {member.joined_at}</p>
+                                    <p className="relationship"><strong>Relations:</strong> {member.relationships.map((relation) => (
+                                        <span key={relation.id}>  <b>{relation.name}</b> {relation.emoji} for <b>{relation.target_character.name}</b> - {relation.description}</span>
                                     ))}</p>
                                 </div>
                             </div>

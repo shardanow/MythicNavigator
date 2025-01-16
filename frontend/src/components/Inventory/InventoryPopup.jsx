@@ -30,7 +30,7 @@ const InventoryPopup = ({ inventory, owner }) => {
             <div className="card-header">
               {/* Item Type Emoji */}
               <div className="item-icon" title={`Type: ${item.type}`}>
-              {item.type_emoji}
+                {item.type_emoji}
               </div>
               <h4 className="item-name">{item.name}</h4>
               {/* Equipped Status */}
@@ -38,7 +38,7 @@ const InventoryPopup = ({ inventory, owner }) => {
                 <span className="equipped-indicator" title="Equipped">🛡️</span>
               )}
               <span className={`rarity-badge rarity-${item.rarity.toLowerCase()}`}>
-                {item.rarity_emoji+" "+item.rarity}
+                {item.rarity_emoji + " " + item.rarity}
               </span>
             </div>
             <p className="item-description">{item.description}</p>

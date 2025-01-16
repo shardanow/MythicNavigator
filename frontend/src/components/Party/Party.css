@@ -16,7 +16,7 @@
     color: #6b4f1d;
     text-align: center;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 20px;
     padding-bottom: 0;
     font-family: "Cinzel Decorative", serif;
 }
@@ -31,28 +31,6 @@
     border-radius: 3px;
 }
 
-/* Party Header */
-.party-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-
-.toggle-button {
-    background: none;
-    border: none;
-    color: var(--primary-color, #333);
-    font-size: 1.2rem;
-    cursor: pointer;
-    padding: 4px 8px;
-    transition: transform 0.3s ease;
-}
-
-.toggle-button:hover {
-    color: var(--accent-color, #007bff);
-}
 
 .party-members::-webkit-scrollbar {
     width: 8px;
@@ -145,7 +123,19 @@
 }
 
 .party-container .basic-info p {
+
     margin: 4px 0;
+}
+
+.party-container .relationship
+{
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+}
+
+.party-container .relationship span{
+    margin-left: 15px;
 }
 
 .party-container .basic-info strong {

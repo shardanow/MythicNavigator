@@ -464,7 +464,7 @@ init_json_structure = {
         ],
     },
     "generator_response_data": {
-        "prompt": "Arwen has discovered new items 🛡️ and skills 🪄 during his long journey. Additionally, he has formed new relationships 🤝 and encountered a new character 🧙‍♂️. As Arwen steps deeper into the Mystic Forest 🌲, dark clouds gather overhead, signaling a sudden change in weather ⛈️. He hears a distant cry for help 📢 and notices an ominous cave 🕳️ nearby. ⚠️ The choices he makes now will shape the journey ahead 🔮.",
+        "prompt": "Arwen has discovered new items 💎 and skills 🪄 during his long journey. Additionally, he has formed new relationships 🤝 and encountered a new character 🧙‍♂️. As Arwen steps deeper into the Mystic Forest 🌲, dark clouds gather overhead, signaling a sudden change in weather ⛈️. He hears a distant cry for help 📢 and notices an ominous cave 🦇 nearby. ⚠️ The choices he makes now will shape the journey ahead 🔮.",
         "environment": {
             "place": "Forest",
             "weather": "Rain",
@@ -480,7 +480,7 @@ init_json_structure = {
             },
             {
                 "id": 2,
-                "description": "Arwen decides to investigate the cave entrance 🕳️ for potential danger.",
+                "description": "Arwen decides to investigate the cave entrance 🦇 for potential danger.",
                 "risk_level": "medium",
                 "time_estimate": "20 minutes"
             },
@@ -492,7 +492,7 @@ init_json_structure = {
             },
             {
                 "id": 4,
-                "description": "⚔️ Arwen uses his skills to prepare for the challenges ahead, training with his sword 🗡️ in the clearing.",
+                "description": "Arwen uses his skills to prepare for the challenges ahead, training with his sword 🗡️ in the clearing.",
                 "risk_level": "low",
                 "time_estimate": "10 minutes"
             }

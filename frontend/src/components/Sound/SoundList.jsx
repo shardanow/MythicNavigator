@@ -7,7 +7,8 @@ const soundMap = {
   "rain forest": "https://youtu.be/qMh14K8WW58",
   "town calm": "https://youtu.be/ugLwYV1GSvo",
   "forest river": "https://youtu.be/1GzKYoyrlkA",
-  "rain dark": "https://youtu.be/VT4GHLdqr10",
+  "rain stormy dark": "https://youtu.be/VT4GHLdqr10",
+  "dark cave": "https://youtu.be/wScEFaoqwPM",
 };
 
 export default soundMap;

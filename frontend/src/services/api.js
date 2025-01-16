@@ -1,7 +1,7 @@
 const BASE_URL = "http://localhost:8000";
 
 export const fetchData = async (dataToSend = {}) => {
-  const response = await fetch(`${BASE_URL}/test-data`, {
+  const response = await fetch(`${BASE_URL}/generate-story`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(dataToSend),

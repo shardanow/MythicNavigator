@@ -1,0 +1,39 @@
+/* General styling for the logs container */
+.logs {
+    background-color: #f9f9f9; /* Light background for readability */
+    border: 1px solid #ccc; /* Subtle border for distinction */
+    border-radius: 8px; /* Rounded corners for modern look */
+    padding: 16px; /* Space inside the container */
+    margin: 16px 0; /* Space around the component */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  }
+  
+  /* Heading styling */
+  .logs h2 {
+    font-size: 1.5rem; /* Larger font size for emphasis */
+    color: #333; /* Dark color for good contrast */
+    margin-bottom: 12px; /* Space below the heading */
+    border-bottom: 2px solid #ddd; /* Underline for separation */
+    padding-bottom: 4px;
+  }
+  
+  /* List styling */
+  .logs ul {
+    list-style-type: disc; /* Default bullet style */
+    padding-left: 20px; /* Indent the bullets */
+    margin: 0;
+  }
+  
+  /* Individual log item styling */
+  .logs li {
+    font-size: 1rem; /* Standard font size for readability */
+    color: #555; /* Medium-dark color for reduced strain */
+    margin-bottom: 8px; /* Space between items */
+    line-height: 1.5; /* Comfortable spacing between lines */
+  }
+  
+  /* Last log item should not have extra margin */
+  .logs li:last-child {
+    margin-bottom: 0;
+  }
+  
