@@ -13,6 +13,10 @@
   font-family: "Merriweather", serif;
 }
 
+.story-container .text-part {
+  display: contents;
+}
+
 /* Story Title */
 .story-title {
   font-size: 2rem;
@@ -42,6 +46,7 @@
   position: relative;
   text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.05);
   align-items: flex-start;
+  white-space-collapse: break-spaces;
 }
 
 /* Drop Cap Styling */

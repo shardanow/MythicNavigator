@@ -66,6 +66,9 @@
   padding: 20px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
 }
 
 .character-card:hover {
@@ -82,7 +85,7 @@
 }
 
 .character-avatar {
-  width: 60px;
+  min-width: 60px;
   height: 60px;
   border-radius: 50%;
   background: linear-gradient(135deg, #d4c0a1, #e6d7b9);

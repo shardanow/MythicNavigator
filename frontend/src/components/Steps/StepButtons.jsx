@@ -1,11 +1,13 @@
 import React from "react";
 import "./StepButtons.css";
 
-const StepButtons = ({ steps, onStepClick }) => {
+const StepButtons = ({ steps, isDisabled, onStepClick }) => {
   if (!steps?.length) return null;
 
   return (
-    <div className="step-buttons">
+    <div className={`step-buttons 
+      ${isDisabled ? "disabled" : ""}`
+    }>
       <div className="steps-header">
       <h2 className="steps-title">🗺️ Next Steps</h2>
       </div>
@@ -15,6 +17,7 @@ const StepButtons = ({ steps, onStepClick }) => {
             key={step.id}
             className={`step-button risk-${step.risk_level.toLowerCase()}`}
             onClick={() => onStepClick(step)}
+            disabled={isDisabled}
           >
             <div className="step-info">
               <span className="step-description">{step.description}</span>

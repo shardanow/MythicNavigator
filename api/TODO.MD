@@ -8,3 +8,4 @@
     - Current characters relations
     - Current events
     - Current World history
+[] Rebuild response data JSON according to needed blocks and tables where remove unnecessary data that could be calculated on client side.

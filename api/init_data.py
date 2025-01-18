@@ -24,6 +24,7 @@ init_json_structure = {
         ],
         "current_world_status": {
             "id": 1,
+            "step_number": 8,
             "weather_id": 2,
             "gorunds_id": 2,
             "location_id": 2,
@@ -86,6 +87,12 @@ init_json_structure = {
                 "location_id": 1,
                 "description": "Arwen meet a young human warrior, and decided to join forces to explore the Mystic Forest together.",
                 "added_at": "123-12-27T18:30:00"
+            },
+            {
+                "id": 4,
+                "location_id": 1,
+                "description": "Arwen choose to discover Mystic Forest.",
+                "added_at": "123-12-28T11:45:00"
             }
         ],
         "language": [
@@ -464,7 +471,7 @@ init_json_structure = {
         ],
     },
     "generator_response_data": {
-        "prompt": "Arwen has discovered new items 💎 and skills 🪄 during his long journey. Additionally, he has formed new relationships 🤝 and encountered a new character 🧙‍♂️. As Arwen steps deeper into the Mystic Forest 🌲, dark clouds gather overhead, signaling a sudden change in weather ⛈️. He hears a distant cry for help 📢 and notices an ominous cave 🦇 nearby. ⚠️ The choices he makes now will shape the journey ahead 🔮.",
+        "prompt": "**Arwen** *(thoughtful)* stands at the edge of the clearing, his gaze fixed on the ominous **[cave entrance]** that looms ahead, its jagged edges carved by time and whispers of danger. The distant *cry* for help still lingers in the air, piercing through the rhythmic drumming of rain as a sudden storm ⛈️ brews overhead. *Dark clouds* swirl with an almost malevolent intent, casting the forest into an eerie twilight.\n\n **Dan**, standing beside him, tightens his grip on his weapon, his eyes darting between the stormy skies and the mysterious depths of the cave 🌌. *'Do you hear that?'* he asks, his voice low but tinged with urgency. **Arwen** nods *(focused)*, his keen elven senses alert to the shifting winds and the faint echoes of desperation.\n\n The duo takes a moment to assess their surroundings. **Arwen**, ever cautious, scans his **[inventory]**, ensuring they have enough provisions and that their weapons 🗡️ are sharp. Meanwhile, **Dan** *(determined)* adjusts his gear 🛡️, a quiet determination written on his face. The storm intensifies, each rumble of thunder reminding them of the weight of the decisions ahead.\n\n *'We have to act quickly'*, **Arwen** *(resolute)* says, his voice firm but measured. *'Every choice here will shape what lies ahead'*.\n\n With the storm at their backs and the cave secrets beckoning, they steel themselves for the journey. Whether they choose to rush toward the source of the cry, seek shelter to prepare for what is to come, or delve cautiously into the cave unknown depths, one thing is certain—adventure, danger, and discovery await.\n\n The air feels charged with electricity ⚡ as the rain begins to fall in earnest, blending the thrill of mystery with the taste of uncertainty. *The choices they make will echo far beyond this moment*. 🎲",
         "environment": {
             "place": "Forest",
             "weather": "Rain",
@@ -630,10 +637,10 @@ init_json_structure = {
                     "id": 1,
                     "character_id": 1,
                     "experience_gained": 50,
-                    "level_gained": 1,
-                    "health_remaining": 40,
-                    "mana_remaining": 30,
-                    "stamina_remaining": 30,
+                    "level_gained": 2,
+                    "health_remaining": 50,
+                    "mana_remaining": 40,
+                    "stamina_remaining": 35,
                     "new_level_stats": {
                         "current_health": 50,
                         "current_mana": 40,
@@ -651,4 +658,23 @@ init_json_structure = {
             }
         }
     },
+    "logs": [
+        "Arwen gains 50 experience points and levels up to level 2.",
+        "Arwen next level experience is updated to 200.",
+        "Arwen health is reduced to 40, mana to 30, and stamina to 30.",
+        "Arwen has discovered new grounds - Goblin Cave during his long journey.",
+        "Arwen has discovered new locations - Cave Entrance during his long journey.",
+        "Arwen has discovered new item - Ancient Amulet during his long journey.",
+        "New item type - Accessory was added.",
+        "Arwen has discovered new skills - Thunder Strike during his long journey.",
+        "Arwen has encountered a new character - Dan during his long journey.",
+        "Dan has formed new relationships - Protector with Arwen during his long journey.",
+        "Arwen has stepped deeper into the Mystic Forest.",
+        "Dark clouds gather overhead, signaling a sudden change in weather to Stormy and updated.",
+        "Arwen hears a distant cry for help and notices an ominous cave nearby.",
+        "New event - Research the Goblin Cave or leave was added.",
+        "Date was updated to 123-12-28T13:30:00.",
+        "Arwen choose to discover Mystic Forest was completed successfully and added to current_world_chooses.",
+        "step_number was updated to 8.",
+    ]
 }

@@ -893,7 +893,7 @@ function Home() {
 
                 acc[characterData.name].push({
                     ...relationshipData,
-                    target_character:{
+                    target_character: {
                         id: targetCharacterData.id, // Include only the ID to avoid circular reference
                         name: targetCharacterData.name, // Add other essential fields if needed
                     },
@@ -1025,22 +1025,30 @@ function Home() {
             {loading && <Loader message="Loading..." />}
             {error && <ErrorMessage error={error} />}
 
-            <Story prompt={recievedData?.generator_response_data?.prompt} />
+            <div className={`section-content 
+                ${loading ? "loading" : ""} 
+                ${error ? "error" : ""}`
+            }>
 
-            <StepButtons
-                steps={recievedData?.generator_response_data?.steps || []}
-                onStepClick={handleStepClick}
-            />
+                <Story prompt={recievedData?.generator_response_data?.prompt} />
 
-            <World worldStatus={worldStatus} worldHistory={worldHistory} worldChooses={worldChooses} />
+                <StepButtons
+                    steps={recievedData?.generator_response_data?.steps || []}
+                    isDisabled={loading}
+                    onStepClick={handleStepClick}
+                />
 
-            <Characters characters={characters} />
+                <World worldStatus={worldStatus} worldHistory={worldHistory} worldChooses={worldChooses} />
 
-            <Party partyMembers={party} />
+                <Characters characters={characters} />
 
-            {playStatus === "play" && <EnvironmentSoundPlayer url={currentSettingPlayer} play={playStatus} />}
+                <Party partyMembers={party} />
 
-            <Logs logs={recievedData?.logs} />
+                {playStatus === "play" && <EnvironmentSoundPlayer url={currentSettingPlayer} play={playStatus} />}
+
+                <Logs logs={recievedData?.logs} />
+
+            </div>
         </div>
     );
 }

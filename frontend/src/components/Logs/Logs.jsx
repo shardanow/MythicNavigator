@@ -3,6 +3,8 @@ import "./Logs.css";
 
 const Logs = ({ logs }) => {
   if (!logs?.length) return null;
+  //if logs is not an array or is empty, return null
+  if(!Array.isArray(logs) || logs.length === 0) return null;
 
   return (
     <div className="logs">

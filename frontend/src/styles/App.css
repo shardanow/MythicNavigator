@@ -73,3 +73,11 @@ body::-webkit-scrollbar-thumb:hover {
 body::-webkit-scrollbar-track {
   background-color: var(--scrollbar-track, #f1f1f1);
 }
+
+.section-content.loading {
+  opacity: 0.5;
+}
+
+.section-content.loading:hover {
+  opacity: 1;
+}

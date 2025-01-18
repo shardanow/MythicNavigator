@@ -11,7 +11,14 @@
     box-sizing: border-box;
 }
 
-.steps-header{
+.step-buttons.disabled button {
+    cursor: not-allowed;
+    background-color: #f4f0e5;
+    color: #b5b5b5;
+    border-color: #d4c0a1;
+}
+
+.steps-header {
     display: flex;
     align-items: center;
     justify-content: center;

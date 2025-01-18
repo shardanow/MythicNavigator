@@ -30,6 +30,7 @@ const World = ({ worldStatus, worldHistory, worldChooses }) => {
                     <div className="world-status">
                         <h3>🌟 World Status</h3>
                         <p>📅 <strong>Date:</strong> {worldStatus.game_date}</p>
+                        <p>👣 <strong>Step number:</strong> {worldStatus.step_number}</p>
                         <p>🗺️ <strong>Grounds:</strong> {worldStatus.grounds.name} - {worldStatus.grounds.description}</p>
                         <p>📍 <strong>Location:</strong> {worldStatus.location.name} - {worldStatus.location.description}</p>
                         <p>⛅ <strong>Weather:</strong>  {worldStatus.weather?.emoji} {worldStatus.weather?.name} - {worldStatus.weather?.description}</p>
