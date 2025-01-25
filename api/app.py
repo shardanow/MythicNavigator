@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from open_ai_integration import generate_story
+from text_to_speech_integration import generate_audio
 from init_data import init_json_structure
 
 app = FastAPI()
@@ -26,3 +27,7 @@ def read_test_data():
 @app.post("/generate-story")
 def generate(data: dict):
     return generate_story(data)
+
+@app.post("/text-to-speech")
+async def generate_audio_endpoint(data: dict):
+    return await generate_audio(data["text"])

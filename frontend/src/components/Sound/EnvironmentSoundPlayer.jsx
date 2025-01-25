@@ -10,7 +10,7 @@ const extractVideoId = (url) => {
 const EnvironmentSoundPlayer = ({ url, play }) => {
   const playerRef = useRef(null);
   const [playerReady, setPlayerReady] = useState(false);
-  const [volume, setVolume] = useState(40); // Default volume is 40%
+  const [volume, setVolume] = useState(15); // Default volume is 15%
   const [isVisible, setIsVisible] = useState(false); // State to control visibility
 
   useEffect(() => {
@@ -72,7 +72,7 @@ const EnvironmentSoundPlayer = ({ url, play }) => {
   return (
     <>
       <button className="sound-toggle-button" onClick={toggleVisibility}>
-        {isVisible ? "🔊" : "🔊"}
+        {isVisible ? "🎶" : "🎶"}
       </button>
       <div className={`player-container ${isVisible ? "visible" : "hidden"}`}>
         <div id="youtube-player"></div>

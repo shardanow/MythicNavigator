@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import TextToAudio from "../TextToAudio/TextToAudio";
 import "./Story.css";
 
 const parseMarkup = (text) => {
@@ -78,6 +79,8 @@ const Story = ({ prompt }) => {
         {firstLetter && <span className="drop-cap">{firstLetter}</span>}
         {parseMarkup(remainingText)}
       </p>
+
+      <TextToAudio text={prompt} />
     </div>
   );
 };

@@ -100,7 +100,7 @@ def generate_story(input_data):
         "2) `main_data`: The updated snapshot of the entire game world based on new outcome.\n"
         "3) `emoji` fields: should contain properly emoji without text.\n\n"
 
-        "### Instructions for Outcome `generator_response_data.outcome` Generation:\n"
+        "### Instructions for Outcome and Steps Generation:\n"
         "1. Reflect ONLY the consequences of the user's selected `choosed_step` from `user_data`. Do NOT include or resolve:\n"
         "   - Future actions.\n"
         "   - Unchosen steps from `prev_generator_response_data.steps`.\n\n"

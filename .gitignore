@@ -20,6 +20,9 @@ db_data/
 # Environment variables
 .env
 
+# keystore files
+mythicnavigator-google-key.json
+
 # OS-specific files
 .DS_Store
 Thumbs.db
